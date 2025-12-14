@@ -17,7 +17,8 @@ The core logic and analysis scripts for this project are located in this reposit
     *   Extracts and saves the frame indices and their corresponding importance scores for analysis.
 
 *   **`llmvs_implementation_tvsum.py`**:
-    *   Python script version of the implementation logic for the TVSum dataset.
+    *   **Raw Python export** of the Colab notebook.
+    *   **Note**: This file is provided for reference. It contains Colab-specific commands and hardcoded paths that must be modified to run locally.
 
 *   **`Evaluation/`**:
     *   Directory containing evaluation metrics and results.
@@ -64,10 +65,14 @@ python train.py \
 ```
 
 ### 2. Evaluation
-To evaluate the trained model on the test split:
+Since we only trained on Split 0, we evaluate specifically on that split:
 
 ```bash
-python test_splits.py --dataset tvsum --weights rho
+python test.py \
+    --dataset tvsum \
+    --split_idx 0 \
+    --weights Summaries/best_rho_model/YOUR_BEST_CHECKPOINT.ckpt \
+    --pt_path llama_emb/tvsum_sum/
 ```
 
 ### 3. Generating Results
@@ -85,10 +90,11 @@ python save_frame_indices.py \
     --output_json tvsum_frame_indices_with_scores.json
 
 # Generate Video Summary
+# Note: --video_dir must point to the folder containing the raw video files (e.g., .mp4)
 python create_summary_video.py \
     --json_path tvsum_frame_indices_with_scores.json \
     --h5_path TVSum/eccv16_dataset_tvsum_google_pool5.h5 \
-    --video_dir ./datasets/tvsum50_ver_1_1/ydata-tvsum50-v1_1/video \
+    --video_dir /path/to/your/raw/videos \
     --video_key video_45 \
     --output video_45_summary.mp4
 ```

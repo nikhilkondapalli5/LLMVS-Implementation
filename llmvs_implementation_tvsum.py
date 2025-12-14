@@ -34,8 +34,6 @@ print("✓ Checkpoint directories created")
 # cp -r /content/best_rho_model /content/drive/MyDrive/Colab-LLMVS/Summaries/
 # cp -r /content/best_tau_model /content/drive/MyDrive/Colab-LLMVS/Summaries/
 
-!python test_splits.py --dataset tvsum --weights rho
-
 
 
 # Commented out IPython magic to ensure Python compatibility.
