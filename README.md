@@ -4,33 +4,33 @@ This repository contains the implementation and analysis code for the **LLMVS** 
 
 ## 📂 Implementation Files
 
-The core logic and analysis scripts for this project are located in the `Implementation/` folder:
+The core logic and analysis scripts for this project are located in this repository:
 
-*   **`Implementation/LLMVS_Implementation_TVSum.ipynb`**:
+*   **`LLMVS_Implementation_TVSum.ipynb`**:
     *   The main **Google Colab Notebook** containing the full run results, including model loading, scoring, and evaluation.
     *   Use this notebook to reproduce our experiments on the TVSum dataset.
 
-*   **`Implementation/create_summary_video.py`**:
+*   **`create_summary_video.py`**:
     *   A script to generate the final summary video (`.mp4`) by stitching together selected frames based on the model's importance scores.
 
-*   **`Implementation/save_frame_indices.py`**:
+*   **`save_frame_indices.py`**:
     *   Extracts and saves the frame indices and their corresponding importance scores for analysis.
 
-*   **`Implementation/llmvs_implementation_tvsum.py`**:
+*   **`llmvs_implementation_tvsum.py`**:
     *   Python script version of the implementation logic for the TVSum dataset.
 
-*   **`Implementation/Evaluation/`**:
+*   **`Evaluation/`**:
     *   Directory containing evaluation metrics and results.
 
 ## 🎥 Results & Demos
 
-*   **Run Results**: See the [Jupyter Notebook](Implementation/LLMVS_Implementation_TVSum.ipynb) for detailed execution logs and score visualizations.
+*   **Run Results**: See the [Jupyter Notebook](LLMVS_Implementation_TVSum.ipynb) for detailed execution logs and score visualizations.
 *   **Video Summaries**: View the generated summary videos and original test videos on Google Drive:
     *   **[📂 View Results on Google Drive](https://drive.google.com/drive/folders/1J1dMqF1lrqOlGkA_rVMLwDcIz4K8MW7v?usp=drive_link)**
 
 ## ⚠️ Implementation Notes & Code Review
 
-The file `Implementation/llmvs_implementation_tvsum.py` is a Python export of our Colab notebook. If running this locally, please note the following:
+The file `llmvs_implementation_tvsum.py` is a Python export of our Colab notebook. If running this locally, please note the following:
 
 1.  **Hardcoded Paths**:
     *   The script contains absolute paths specific to our local machine (e.g., `/Users/konda/...`).
