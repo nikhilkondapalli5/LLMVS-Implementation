@@ -2,9 +2,18 @@
 
 This repository contains the implementation and analysis code for the **LLMVS** project, based on the CVPR 2025 paper by Lee et al.
 
-## 📂 Implementation Files
+## 📂 Repository Structure
 
-The core logic and analysis scripts for this project are located in this repository:
+### 1. Core Model & Training
+Referenced from the original repository:
+
+*   **`train.py`**: Main training script.
+*   **`test.py`**: Evaluation script.
+*   **`networks/`**: Model architecture definitions.
+*   **`utils/`**: Helper functions for data loading and configuration.
+
+### 2. Our Implementation & Extensions
+The core logic and analysis scripts developed for this project. We adapted the codebase to utilize **PyTorch Lightning (>=2.0.0)** and integrated libraries compatible with the **Google Colab** environment (e.g., `torchmetrics`, `einops`, `h5py`).
 
 *   **`LLMVS_Implementation_TVSum.ipynb`**:
     *   The main **Google Colab Notebook** containing the full run results, including model loading, scoring, and evaluation.
@@ -19,6 +28,12 @@ The core logic and analysis scripts for this project are located in this reposit
 *   **`llmvs_implementation_tvsum.py`**:
     *   **Raw Python export** of the Colab notebook.
     *   **Note**: This file is provided for reference. It contains Colab-specific commands and hardcoded paths that must be modified to run locally.
+
+*   **`analyze_metrics.py`**:
+    *   Analyzes evaluation results (`eval_metrics.csv`) to generate summary statistics and visualization plots (`per_video_metrics.png`, `average_metrics.png`).
+
+*   **`compare_sumamaries.py`**:
+    *   Compares two text summaries (e.g., original vs. generated) using ROUGE, BERTScore, and Cosine Similarity metrics.
 
 *   **`Evaluation/`**:
     *   Directory containing evaluation metrics and results.
@@ -97,6 +112,22 @@ python create_summary_video.py \
     --video_dir /path/to/your/raw/videos \
     --video_key video_45 \
     --output video_45_summary.mp4
+```
+
+### 4. Analysis Tools
+
+**Analyze Evaluation Metrics**:
+Generates plots and statistics from `eval_metrics.csv`.
+```bash
+python analyze_metrics.py
+```
+
+**Compare Summaries**:
+Calculates semantic similarity between two text summaries.
+```bash
+python compare_sumamaries.py \
+    --long_summary Evaluation/long_summary_14.txt \
+    --short_summary Evaluation/short_summary_14.txt
 ```
 
 ## 📄 Original Work Citation
