@@ -38,6 +38,28 @@ The core logic and analysis scripts developed for this project. We adapted the c
 *   **`Evaluation/`**:
     *   Directory containing evaluation metrics and results.
 
+### 3. Key Hyperparameters
+
+- `--dataset`: Dataset selection (`summe` or `tvsum`)
+- `--split_idx`: Data split index (0-4)
+- `--epochs`: Number of training epochs (default: 200)
+
+## 📊 Datasets
+
+This project uses standard video summarization benchmarks. Please refer to the [original repository](https://github.com/mlee47/LLMVS) for download links and preprocessing instructions.
+
+*   **SumMe**: Egocentric and event videos.
+*   **TVSum**: News and documentary videos.
+
+**Directory Structure**:
+Ensure your data is organized as follows for the scripts to work:
+```
+LLMVS/
+├── llama_emb/          # Pre-computed embeddings
+├── SumMe/              # SumMe dataset files
+└── TVSum/              # TVSum dataset files
+```
+
 ## 🎥 Results & Demos
 
 *   **Run Results**: See the [Jupyter Notebook](LLMVS_Implementation_TVSum.ipynb) for detailed execution logs and score visualizations.
